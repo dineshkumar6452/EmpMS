@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, 
+  imports:      [ BrowserModule, FormsModule, HttpClientModule , 
   
     RouterModule.forRoot([
       {path : 'emplist', component : emplist },
@@ -28,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
   
   
    ],
-  declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent, HttpClientModule ],
+  declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent],
   bootstrap:    [ AppComponent ],
   
     providers: [EmployeeService]
