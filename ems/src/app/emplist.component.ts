@@ -11,52 +11,18 @@ import { EmployeeService } from './emp.service';
 export class  emplist implements OnInit   {
 
   constructor(private router: Router) { }
-  
-  
+   
   public em  = new EmployeeService();
   public employeelist= [];
 
- 
-
-
-  
+   
   ngOnInit(){
-
     this.em.getEmployees().subscribe(data => this.employeelist = data);
+    }
 
-
-    
-
-
-  }
-
-
-
-  
-
-
-
-
-  
-
-
-    
-
-    
-    
-
-
-  }
-
-
-
-
-
-
-
-  moveToEmpId(id){
-    this.router.navigate(['/editemp', id]);
-  }
+ // moveToEmpId(id){
+  //  this.router.navigate(['/editemp', id]);
+ // }
 
 
 

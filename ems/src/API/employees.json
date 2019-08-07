@@ -1,0 +1,7 @@
+[ 
+    {"id" : 1, "name" : "Ram" , "location": "Banglore","email":"ram@gmail.com","mobile":789456123	},
+    {"id" : 2, "name" : "Raj" , "location": "Chennai","email":"raj@gmail.com","mobile":789456123},
+    {"id" : 3, "name" : "Vinay" , "location": "Delhi","email":"vinay@gmail.com","mobile":789456123},
+    {"id" : 4, "name" : "Dinesh" , "location": "Pune","email":"dinesh@gmail.com","mobile":789456123}
+
+  ]

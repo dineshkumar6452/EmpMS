@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import   'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
+import { IEmployee } from './employee';
+import { Observable } from 'rxjs';
+
 
 
 @Injectable({
@@ -11,19 +13,19 @@ export class EmployeeService {
 
  
 
-  constructor(private _http :HttpClient){}
+  constructor(private http : HttpClient){}
 
-  private _url : string = "API/employees.json"
+  private _url : string = "API/employees.json";
   
-  getEmployees(){
-       return this._http.get(this._url)
-       .map((response :Response) => response.json());
+  
+  getEmployees(): Observable<IEmployee[]>{
+    return this.http.get<IEmployee[]>(this._url);
   }
 
 
-  addEmployee(){
+  //addEmployee(){
 
-    this.emplist.push({"id" : 5, "name" : "Ram" , "location": "Banglore","email":"ram@gmail.com",'mobile':789456123    })
-  }
+    //this.emplist.push({"id" : 5, "name" : "Ram" , "location": "Banglore","email":"ram@gmail.com",'mobile':789456123    })
+  //}
 
 }

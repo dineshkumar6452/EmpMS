@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { EmployeeService } from './emp.service';
  
 
@@ -16,7 +15,7 @@ export class addemp  {
    
   addEmpToService(){
      this.dataService.addEmployee();
-     console.log(this.dataService.emplist);
+     
   }
 
 
