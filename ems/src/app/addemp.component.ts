@@ -12,6 +12,13 @@ import { EmployeeService } from './emp.service';
   })
 export class addemp  {
 
+  public dataService = new EmployeeService();
+   
+  addEmpToService(){
+     this.dataService.addEmployee();
+     console.log(this.dataService.emplist);
+  }
+
 
 }
 

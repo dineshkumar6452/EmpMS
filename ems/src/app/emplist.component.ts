@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeService } from './emp.service';
 
@@ -8,18 +8,58 @@ import { EmployeeService } from './emp.service';
   templateUrl: './emplist.component.html' 
 
 })
-export class  emplist {
+export class  emplist implements OnInit   {
 
   constructor(private router: Router) { }
   
-   public em  = new EmployeeService();
-   employeelist = this.em.getEmployees();
+  
+  public em  = new EmployeeService();
+  public employeelist= [];
+
+ 
+
+
+  
+  ngOnInit(){
+
+    this.em.getEmployees().subscribe(data => this.employeelist = data);
+
+
+    
+
+
+  }
+
+
+
+  
+
+
+
+
+  
+
+
+    
+
+    
+    
+
+
+  }
+
+
+
+
+
+
 
   moveToEmpId(id){
     this.router.navigate(['/editemp', id]);
   }
 
-  
+
+
 
   
   

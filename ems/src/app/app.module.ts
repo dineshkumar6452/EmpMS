@@ -9,6 +9,7 @@ import { addemp } from './addemp.component';
 import { editemp } from './editemp.component';
 import { detailComponent } from './details.component';
 import { EmployeeService } from './emp.service'
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,7 +28,7 @@ import { EmployeeService } from './emp.service'
   
   
    ],
-  declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent ],
+  declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent, HttpClientModule ],
   bootstrap:    [ AppComponent ],
   
     providers: [EmployeeService]
