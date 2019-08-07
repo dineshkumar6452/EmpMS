@@ -5,27 +5,23 @@ import { Observable } from 'rxjs';
 
 
 
-@Injectable({
-  providedIn: 'root',
-
-})
+@Injectable() 
 export class EmployeeService {
 
- 
-
-  constructor(private http : HttpClient){}
-
-  private _url : string = "API/employees.json";
+  private url : string = "https://jsonplaceholder.typicode.com/todos/1";
+  private http : HttpClient;
   
   
   getEmployees(): Observable<IEmployee[]>{
-    return this.http.get<IEmployee[]>(this._url);
+    console.log("Get employee");
+    console.log(this.url);
+  
+   return this.http.get<IEmployee[]>(this.url)
+   
+    // return this.http.get<IEmployee[]>(this._url);
+    
   }
 
-
-  //addEmployee(){
-
-    //this.emplist.push({"id" : 5, "name" : "Ram" , "location": "Banglore","email":"ram@gmail.com",'mobile':789456123    })
-  //}
-
 }
+
+
