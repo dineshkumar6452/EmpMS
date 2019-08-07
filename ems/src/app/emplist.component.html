@@ -1,0 +1,40 @@
+<html>
+
+<h4>Employee list</h4>
+<form>
+  <fieldset>
+  <legend>Employee List:</legend>
+  
+  <h5>Filter by:</h5>
+  <input type="text" placeholder="Search for Employee"   [(ngModel)] = "eSearch"  > 
+  <p>Total Number of Employee: {{employeelist.length}}</p>  
+  
+<br>
+
+<table border   >
+  <tr>
+    <th>Emp ID </th>
+    <th>Name </th> 
+    <th>Location</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+  <tr *ngFor = "let emp of employeelist ">
+    <td>{{emp.id}}</td>
+    <td>{{emp.name}}</td>
+    <td>{{emp.location}}</td>
+    <td>{{emp.email}}</td>
+    <td>{{emp.mobile}}</td>
+    <td><button type="button" (click)="moveToEmpId(emp.id)">Edit</button></td>
+    <td><button type="button" (click)="moveToEmpId(emp.id)">Delete</button></td>
+  </tr>
+  
+</table>
+</fieldset>
+</form>
+
+</html>
+
+
