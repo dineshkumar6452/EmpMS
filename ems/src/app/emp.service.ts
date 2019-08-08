@@ -10,11 +10,17 @@ import { tap, catchError } from 'rxjs/operators';
 @Injectable() 
 export class EmployeeService {
 
+  // ---------- Variables -------------------------------
   private url : string = "./assets/data/employees.json";
-  // private url : string = "http://localhost:3000/employees";
+
+
+  // -------------Constructor---------------------------
   constructor(private http : HttpClient){}
   
   
+
+  // ---------------------------Method---------------------
+
   getEmployees() {
     return this.http.get(this.url);
   }

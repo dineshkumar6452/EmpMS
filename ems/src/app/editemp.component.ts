@@ -6,12 +6,12 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'edit-emp',
   templateUrl: './editemp.component.html'
-
-
-
   })
 export class editemp implements OnInit {
-  
+
+
+
+  // varible for employee details
   public empId;
   public EmpName;
   public empLocation;

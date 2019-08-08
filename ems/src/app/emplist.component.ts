@@ -10,28 +10,20 @@ import { EmployeeService } from './emp.service';
 })
 export class  emplist implements OnInit   {
 
-
+//-----------Constructor --------------------------
+    constructor(private router: Router,
   
-  constructor(private router: Router,
+//------------Variables----------------------------  
     private employeeService:EmployeeService){};
-
- 
-   public employeelist = [];
+    public employeelist = [];
 
    
-  ngOnInit(){
-    
 
+//--------------Method-----------------------------
+
+  ngOnInit(){
     this.employeeService.getEmployees().subscribe((data: any) =>  {
-      this.employeelist=data });
+    this.employeelist=data });
 
    }
-
-
-
-
-  
-  
-
-
 }
