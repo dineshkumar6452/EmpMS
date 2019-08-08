@@ -12,21 +12,19 @@ export class  emplist implements OnInit   {
 
 
   
-  constructor(private router: Router){};
+  constructor(private router: Router,
+    private employeeService:EmployeeService){};
 
-  public _em = new EmployeeService();
-  public employeelist = [ {"id" : 1, "name" : "Ram" , "location": "Banglore","email":"ram@gmail.com","mobile":789456123}];
+ 
+   public employeelist = [];
 
    
   ngOnInit(){
     
 
-    this._em.getEmployees().subscribe(data  =>{console.log(data)});
-    console.log("ok from emplist");
-    }
+    this.employeeService.getEmployees().subscribe((data: any) =>  {
+      this.employeelist=data });
 
-  moveToEmpId(id){
-  this.router.navigate(['/editemp', id]);
    }
 
 

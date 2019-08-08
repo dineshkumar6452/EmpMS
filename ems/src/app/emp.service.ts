@@ -1,26 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { IEmployee } from './employee';
 import { Observable } from 'rxjs';
+import {throwError as observableThrowError } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 
 
 
 @Injectable() 
 export class EmployeeService {
 
-  private url : string = "https://jsonplaceholder.typicode.com/todos/1";
-  private http : HttpClient;
+  private url : string = "./assets/data/employees.json";
+  // private url : string = "http://localhost:3000/employees";
+  constructor(private http : HttpClient){}
   
   
-  getEmployees(): Observable<IEmployee[]>{
-    console.log("Get employee");
-    console.log(this.url);
-  
-   return this.http.get<IEmployee[]>(this.url)
-   
-    // return this.http.get<IEmployee[]>(this._url);
-    
+  getEmployees() {
+    return this.http.get(this.url);
   }
+  // getEmployees(): Observable<IEmployee[]>{
+  //   return this.http.get<IEmployee[]>(this.url)
+  //                   .pipe(tap(data => alert(JSON.stringify(data))) , catchError(this.errorHandler))
+  // }
+  // errorHandler(error: HttpErrorResponse){
+
+  //   return observableThrowError(error.message || "Server Error");
+  // }
 
 }
 
