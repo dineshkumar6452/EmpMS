@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from './emp.service';
+import { User } from './userModal';
  
 
 @Component({
@@ -7,6 +8,19 @@ import { EmployeeService } from './emp.service';
   templateUrl: './addemp.component.html'
   })
 export class addemp  {
+
+  constructor(private employeeService : EmployeeService){ }
+
+
+  userModal = new User( "","","",454654);
+
+  
+  
+
+  addEmpToService(){
+    //this.employeeService.addEmployee();
+    console.log(this.userModal);
+  }
 
 }
 

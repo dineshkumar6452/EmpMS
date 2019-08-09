@@ -10,6 +10,7 @@ import { editemp } from './editemp.component';
 import { detailComponent } from './details.component';
 import { EmployeeService } from './emp.service'
 import { HttpClientModule } from '@angular/common/http';
+import { SearchFilterPipe } from './search.pipe';
 
 
 
@@ -28,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
   
   
    ],
-  declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent],
+  declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent, SearchFilterPipe],
   bootstrap:    [ AppComponent ],
   
     providers: [EmployeeService]

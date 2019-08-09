@@ -11,11 +11,13 @@ import { EmployeeService } from './emp.service';
 export class  emplist implements OnInit   {
 
 //-----------Constructor --------------------------
-    constructor(private router: Router,
+    constructor(private router: Router, private employeeService:EmployeeService){};
   
 //------------Variables----------------------------  
-    private employeeService:EmployeeService){};
+   
     public employeelist = [];
+    public term = "";
+   
 
    
 
