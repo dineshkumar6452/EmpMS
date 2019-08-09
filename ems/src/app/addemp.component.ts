@@ -12,13 +12,17 @@ export class addemp  {
   constructor(private employeeService : EmployeeService){ }
 
 
-  userModal = new User( "","","",454654);
+  userModal = new User( "","","",123);
+
+  public dataPost= this.userModal;
 
   
   
 
   addEmpToService(){
-    //this.employeeService.addEmployee();
+    this.employeeService.addEmployee();
+
+  
     console.log(this.userModal);
   }
 
