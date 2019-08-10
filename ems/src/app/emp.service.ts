@@ -26,7 +26,7 @@ export class EmployeeService {
   // ---------------Method--------------------------------
 
   getEmployees() {
-    return this.http.get(this.LocalhostUrl);
+    return this.http.get(this.LocalhostUrl)
   }
 
   addEmployee(post:any){
@@ -38,7 +38,7 @@ export class EmployeeService {
   }
 
   delEmp(url:string){
-        return this.http.delete(url);
+        return this.http.delete(url).toPromise().then(data=>{console.log(data)});
   }
 
   getEmployee(url:string){
