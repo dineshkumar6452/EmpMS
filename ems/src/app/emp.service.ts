@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { IEmployee } from './employee';
-import { Observable } from 'rxjs';
-import {throwError as observableThrowError } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+
 
 
 
@@ -14,48 +12,44 @@ export class EmployeeService {
   private url : string = "./assets/data/employees.json";
   private LocalhostUrl = "http://localhost:3000/employees/";
 
-  private postUrl :string = "http://httpbin.org/post";
-
-  post = [
-    {'test' : "name"}
-  ]
 
 
-  
 
-
-  // -------------Constructor---------------------------
+   // -------------Constructor---------------------------
   constructor(private http : HttpClient){}
   
+
+
+
   
 
-  // ---------------------------Method---------------------
+  // ---------------Method--------------------------------
 
   getEmployees() {
     return this.http.get(this.LocalhostUrl);
   }
 
-  addEmployee(){
+  addEmployee(post:any){
+   return this.http.post(this.LocalhostUrl,post).toPromise().then(data => {console.log(data)})
+  }
 
-    console.log("Hello from Service");
-    console.log(this.post);
+  updateEmployee(url:string,updata:any){
+    return this.http.put(url,updata).toPromise().then(data=> {console.log(data)});
+  }
 
-    return this.http.post(this.LocalhostUrl,this.post).toPromise().then((data:any) => data = this.post.push(data))
+  delEmp(url:string){
+        return this.http.delete(url);
+  }
+
+  getEmployee(url:string){
+    return this.http.get(url);
   }
 
 
 
 
 
-  // getEmployees(): Observable<IEmployee[]>{
-  //   return this.http.get<IEmployee[]>(this.url)
-  //                   .pipe(tap(data => alert(JSON.stringify(data))) , catchError(this.errorHandler))
-  // }
-  // errorHandler(error: HttpErrorResponse){
-
-  //   return observableThrowError(error.message || "Server Error");
-  // }
-
+ 
 }
 
 

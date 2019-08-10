@@ -9,21 +9,21 @@ import { User } from './userModal';
   })
 export class addemp  {
 
+
+//----------------Constructor--------------------------
   constructor(private employeeService : EmployeeService){ }
 
 
-  userModal = new User( "","","",123);
-
-  public dataPost= this.userModal;
+//------------------Variables and Modals-----------------  
+    userModal = new User( "","","",0);  
+    public dataPost= this.userModal;
 
   
   
-
+//--------------Methods-------------------------------------
   addEmpToService(){
-    this.employeeService.addEmployee();
-
-  
-    console.log(this.userModal);
+    this.employeeService.addEmployee(this.userModal);
+      
   }
 
 }

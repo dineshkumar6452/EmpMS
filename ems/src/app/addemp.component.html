@@ -1,14 +1,11 @@
-
-
 <form #addEmpForm = "ngForm" (ngSubmit) = "addEmpToService()" >
  <fieldset>
   <legend>Add Employee:</legend><br>
-Employee Name : <input  required   type ='text' name = "empname" [(ngModel)] = "userModal.EmpName"  > {{Employee}}<br><br> 
-Location : <input  required name="location"  [(ngModel)] = "userModal.empLocation">{{location}}<br><br>
-Email : <input  required type="email" name="email"  [(ngModel)] = "userModal.email" >{{email}}<br><br>
-Mobile: <input required type="tel" name= "mobile"  [(ngModel)] = "userModal.empmobile" >{{mobile}}<br><br>
-
-
+  
+Employee Name : <input  required   type ='text' name = "Name" [(ngModel)] = "userModal.name"  > {{Employee}}<br><br> 
+Location : <input  required name="Location"  [(ngModel)] = "userModal.location">{{location}}<br><br>
+Email : <input  required type="email" name="Email"  [(ngModel)] = "userModal.email" >{{email}}<br><br>
+Mobile: <input required type="tel" name= "Mobile"  [(ngModel)] = "userModal.mobile" >{{mobile}}<br><br>
 <button  type="submit"  >Add Employee</button>
 
 </fieldset>

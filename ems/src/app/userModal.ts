@@ -2,11 +2,12 @@ export class User{
 
     constructor(
       
-        public EmpName :string,
-        public empLocation :string,
+        public name :string,
+        public location :string,
         public email : string,
-        public empmobile :number
+        public mobile :number
 
     ){}
 
 }
+
