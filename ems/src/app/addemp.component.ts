@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from './emp.service';
 import { User } from './userModal';
+import { Router } from '@angular/router';
  
 
 @Component({
@@ -11,11 +12,11 @@ export class addemp  {
 
 
 //----------------Constructor--------------------------
-  constructor(private employeeService : EmployeeService){ }
+  constructor(private employeeService : EmployeeService, private router : Router){ }
 
 
 //------------------Variables and Modals-----------------  
-    userModal = new User( "","","",0);  
+    userModal = new User( "","","","");  
     public dataPost= this.userModal;
 
   
@@ -23,6 +24,9 @@ export class addemp  {
 //--------------Methods-------------------------------------
   addEmpToService(){
     this.employeeService.addEmployee(this.userModal);
+    
+    this.router.navigate(['./ems/emplist']);
+    
     
       
   }

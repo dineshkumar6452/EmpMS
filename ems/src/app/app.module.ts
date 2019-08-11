@@ -20,7 +20,7 @@ import { SearchFilterPipe } from './search.pipe';
     RouterModule.forRoot([
       {path : 'ems/emplist', component : emplist },
       {path : 'ems/addemp' , component : addemp},
-      { path : 'emplist/editemp/:id', component : editemp },
+      { path : 'ems/emplist/editemp/:id', component : editemp },
       { path : 'emplist/details/:id' ,component : detailComponent},
       
      

@@ -10,7 +10,7 @@ export class editemp implements OnInit {
 
   //------------------------Variables--------------
   private employees:any=[];
-  private url = "";
+  private url:any = "";
   private id :string;
 
   //--------------------Constructor ----------------
@@ -22,12 +22,11 @@ export class editemp implements OnInit {
 
   ngOnInit(){
     this.id = this.route.snapshot.params['id'];
-    this.url = "http://localhost:3000/employees/"+this.id;
+    this.url = this.employeeService.LocalhostUrl+this.id;
     this.employeeService.getEmployee(this.url).subscribe((data) => this.employees = data);
   }
 
   editEmp(){
-      console.log(this.employees);
       this.employeeService.updateEmployee(this.url,this.employees);
       console.log("Update is success");
 

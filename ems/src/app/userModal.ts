@@ -5,7 +5,7 @@ export class User{
         public name :string,
         public location :string,
         public email : string,
-        public mobile :number
+        public mobile :string
 
     ){}
 

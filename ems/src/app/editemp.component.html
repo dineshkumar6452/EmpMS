@@ -2,13 +2,31 @@
  <fieldset>
   <legend>Edit Employee:</legend><br>
  
- <label>Employee Name</label> : <input id="name" type="text"  value = "{{employees.name}}"  name="name" [(ngModel)] = "employees.name"  ><br><br>
-<label>Location : </label><input id="location"  value = "{{employees.location}}"name="location" [(ngModel)] = "employees.location"><br><br>
-<label>Email : </label><input id ="email"   type="email" value = "{{employees.email}}"name="email" [(ngModel)] = "employees.email"><br><br>
-<label>Mobile : </label><input id= "mobile" type="" value = "{{employees.mobile}}"  name="mobile" [(ngModel)] = "employees.mobile"  ><br><br>
+  <table  id ="addTable"  width="300" >
 
+        <tr>
+           <td>Name : </td>
+           <td> <input #name="ngModel" id="name" type="text"  value = "{{employees.name}}"  name="name" [(ngModel)] = "employees.name"  minlength="3" ></td>  
+         </tr>
+         <tr>
+             <td>Localtion :</td> 
+             <td><input #lo="ngModel" id="location"  value = "{{employees.location}}"name="location" [(ngModel)] = "employees.location"></td>  
+         </tr>
+         <tr>
+             <td>Email :</td> 
+             <td><input #em="ngModel" id ="email"   type="email" value = "{{employees.email}}"name="email" [(ngModel)] = "employees.email"></td>  
+           </tr>
+           <tr>
+               <td>Mobile : </td> 
+               <td><input #mob="ngModel" id= "mobile" type="" value = "{{employees.mobile}}"  name="mobile" [(ngModel)] = "employees.mobile" minlength="8" maxlength="10" ></td>  
+           </tr>
+           
+           <br><br>
+     
+           </table>
 
-<button type="submit">Update</button>
+<button  [disabled] = "name.pristine && mob.pristine && em.pristine && lo.pristine || name.invalid ||mob.invalid " type="submit">Update</button>
 
 </fieldset>
 </form>
+

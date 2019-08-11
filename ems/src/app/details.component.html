@@ -1,16 +1,35 @@
 <form>
  <fieldset>
   <legend>Details Employee:</legend><br>
-  <label id ="id">ID {{employees.id}}</label><br><br>
-  <label id = "name">Name :   {{employees.name}}</label><br><br>
-  <label id = "location">Location  :   {{employees.location}}</label><br><br>
-  <label id = "email">Email  :   {{employees.email}}</label><br><br>
-  <label id = "mobile">Mobile :   {{employees.mobile}}</label><br><br>
+  <table  id ="myTable"  width="200" >
+  
 
+      <tr>
+        <td>ID </td> 
+        <td> {{employees.id}}</td>  
+      </tr>
+      <tr>
+          <td>Name </td> 
+          <td> {{employees.name}}</td>  
+      </tr>
+      <tr>
+          <td>Location </td> 
+          <td> {{employees.location}}</td>  
+        </tr>
+        <tr>
+            <td>Email </td> 
+            <td> {{employees.email}}</td>  
+        </tr>
+        <tr>
+            <td>Mobile</td> 
+            <td> {{employees.mobile}}</td>  
+        </tr>
+        <br><br>
 
-
-
+        </table>
 <button type="button" routerLink ="/ems/emplist">Back</button>
 
 </fieldset>
 </form>
+
+

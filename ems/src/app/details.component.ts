@@ -23,7 +23,7 @@ export class detailComponent implements OnInit  {
   //------------------Methods -------------------------
   ngOnInit(){
     this.id = this.route.snapshot.params['id'];
-    this.url = "http://localhost:3000/employees/"+this.id;
+    this.url = this.employeeService.LocalhostUrl+this.id;
     this.employeeService.getEmployee(this.url).subscribe((data) => this.employees = data);
    }
 

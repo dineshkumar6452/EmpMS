@@ -23,8 +23,8 @@
     <th>Delete</th>
     </tr>
   <tr *ngFor = "let emp of (employeelist | searchFilter : term )">
-    <td><a href="">{{emp.id}}</a></td>
-    <td id = "{{emp.name+(emp.id-1)}}">{{emp.name}}</td>
+    <td ><a  href="emplist/details/{{emp.id}}">{{emp.id}}</a></td>
+    <td id = "{{emp.name+(emp.id-1)}}" >{{emp.name}}</td>
     <td id = "{{emp.location+(emp.id-1)}">{{emp.location}}</td>
     <td id = "{{emp.email+(emp.id-1)}">{{emp.email}}</td>
     <td id = "{{emp.mobile+(emp.id-1)}">{{emp.mobile}}</td>

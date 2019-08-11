@@ -33,18 +33,25 @@ export class  emplist implements OnInit   {
 
 
   moveToEmpId(emp:any){
-    this.router.navigate(['/emplist/editemp' , emp])
+    this.router.navigate(['/ems/emplist/editemp' , emp])
 
     }
+
+  moveToDetail(emp:any){
+
+    console.log(emp);
+    this.router.navigate(['emplist/details/:id', emp])
+  }
 
 
    
 
    delteToEmpId(emp:string){
-    this.url = "http://localhost:3000/employees/"+emp;
+    this.url = this.employeeService.LocalhostUrl+emp;
     this.employeeService.delEmp(this.url);
-    console.log(this.url);
-    console.log("DElete");
+  
+    console.log(alert("Employee has been Deleted. Please refresh page" ));
+    console.log("Delete"+ emp);
       
 
    }
