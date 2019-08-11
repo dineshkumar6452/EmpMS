@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeService } from './emp.service';
 
@@ -32,6 +32,14 @@ export class  emplist implements OnInit   {
    }
 
 
+
+   ngOnChanges(changes : SimpleChange)
+   {
+     console.log(changes);
+
+   }
+
+
   moveToEmpId(emp:any){
     this.router.navigate(['/ems/emplist/editemp' , emp])
 
@@ -49,9 +57,8 @@ export class  emplist implements OnInit   {
    delteToEmpId(emp:string){
     this.url = this.employeeService.LocalhostUrl+emp;
     this.employeeService.delEmp(this.url);
-  
-    console.log(alert("Employee has been Deleted. Please refresh page" ));
     console.log("Delete"+ emp);
+    this.ngOnInit();
       
 
    }

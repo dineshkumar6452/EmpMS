@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
-import { IEmployee } from './employee';
-
-
 
 
 @Injectable() 
