@@ -1,6 +1,7 @@
-import { Component, OnInit, SimpleChange } from '@angular/core';
+import { Component, OnInit, SimpleChange, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeService } from './emp.service';
+
 
 
 @Component({
@@ -10,6 +11,10 @@ import { EmployeeService } from './emp.service';
 })
 export class  emplist implements OnInit   {
 
+
+  //--------------input Variables-----------------
+
+  
 //-----------Constructor --------------------------
     constructor(private router: Router, private employeeService:EmployeeService){};
   
@@ -33,14 +38,7 @@ export class  emplist implements OnInit   {
 
 
 
-   ngOnChanges(changes : SimpleChange)
-   {
-     console.log(changes);
-
-   }
-
-
-  moveToEmpId(emp:any){
+     moveToEmpId(emp:any){
     this.router.navigate(['/ems/emplist/editemp' , emp])
 
     }
@@ -51,20 +49,14 @@ export class  emplist implements OnInit   {
     this.router.navigate(['emplist/details/:id', emp])
   }
 
-
-   
-
    delteToEmpId(emp:string){
-    this.url = this.employeeService.LocalhostUrl+emp;
-    this.employeeService.delEmp(this.url);
-    console.log("Delete"+ emp);
+    this.employeeService.delEmp(this.employeeService.LocalhostUrl+emp);
     this.ngOnInit();
       
 
    }
    
 
-
-
+   
 
 }

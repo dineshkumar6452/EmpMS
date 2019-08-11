@@ -29,8 +29,9 @@ export class editemp implements OnInit {
   editEmp(){
       this.employeeService.updateEmployee(this.url,this.employees);
       console.log("Update is success");
-
+      
       this.router.navigate(['emplist/details' ,this.id])
+      
      
 
 

@@ -34,6 +34,6 @@ import { SearchFilterPipe } from './search.pipe';
   declarations: [ AppComponent, HelloComponent, emplist, addemp,editemp, detailComponent, SearchFilterPipe],
   bootstrap:    [ AppComponent ],
   
-    providers: [EmployeeService]
+    providers: [EmployeeService, emplist,detailComponent]
 })
 export class AppModule { }
