@@ -1,15 +1,15 @@
 <html>
  
 
-<h4>Employee list</h4>
+<h4 >Employee list</h4>
 <form   #userForm = "ngForm">
   <fieldset>
   <legend>Employee List:</legend>
   
   <h4>Filter by:</h4>
  
-<input name = "search" [(ngModel)] = "term"  placeholder="Search for Employee"  > <br>
-<Label>Total Number of Employee: {{(employeelist | searchFilter : term ).length }}</Label>  
+<input name = "search"  id="filter" [(ngModel)] = "term"  placeholder="Search for Employee"  > <br>
+<Label id="count" >Total Number of Employees: {{(employeelist | searchFilter : term ).length }}</Label>  
 <br><br>
 
 <table border id ="myTable"  >
@@ -23,13 +23,13 @@
     <th>Delete</th>
     </tr>
   <tr *ngFor = "let emp of (employeelist | searchFilter : term )">
-    <td>{{emp.id}}</td>
-    <td>{{emp.name}}</td>
-    <td>{{emp.location}}</td>
-    <td>{{emp.email}}</td>
-    <td>{{emp.mobile}}</td>
-    <td><button type="button" (click)="moveToEmpId(emp.id)">Edit</button></td>
-    <td><button type="button" (click)="delteToEmpId(emp.id)">Delete</button></td>
+    <td><a href="">{{emp.id}}</a></td>
+    <td id = "{{emp.name+(emp.id-1)}}">{{emp.name}}</td>
+    <td id = "{{emp.location+(emp.id-1)}">{{emp.location}}</td>
+    <td id = "{{emp.email+(emp.id-1)}">{{emp.email}}</td>
+    <td id = "{{emp.mobile+(emp.id-1)}">{{emp.mobile}}</td>
+    <td><button type="button" (click)="moveToEmpId(emp.id)">Edit{{emp.id}}</button></td>
+    <td><button type="button" (click)="delteToEmpId(emp.id)">Delete{{emp.id}}</button></td>
   </tr>
   
 </table>

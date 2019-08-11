@@ -23,6 +23,7 @@ export class addemp  {
 //--------------Methods-------------------------------------
   addEmpToService(){
     this.employeeService.addEmployee(this.userModal);
+    
       
   }
 

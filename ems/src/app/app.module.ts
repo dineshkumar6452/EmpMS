@@ -18,8 +18,8 @@ import { SearchFilterPipe } from './search.pipe';
   imports:      [ BrowserModule, FormsModule, HttpClientModule , 
   
     RouterModule.forRoot([
-      {path : 'emplist', component : emplist },
-      {path : 'addemp' , component : addemp},
+      {path : 'ems/emplist', component : emplist },
+      {path : 'ems/addemp' , component : addemp},
       { path : 'emplist/editemp/:id', component : editemp },
       { path : 'emplist/details/:id' ,component : detailComponent},
       
